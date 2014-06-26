@@ -1,0 +1,25 @@
+﻿@inherits ViewPage<BlogPostsModel>
+@{
+    ViewBag.Title = "davetimmins blog";
+    ViewBag.Description = "The blog of Dave Timmins. Focused on GIS development primarily across the Esri stack of ArcGIS products.";
+}
+<div class="posts">
+    @foreach (BlogPost post in Model.Posts)
+    {
+        <text>
+        <section class="post">
+            <header class="post-header">
+                <a href="@post.RelativePostUrl">@post.SummaryImageMarkup.AsRaw()</a>
+                <h2 class="post-title">
+                    <a href="@post.RelativePostUrl">@post.Title</a>
+                </h2>
+                <h5><i class="fa fa-calendar-o"></i>@post.FriendlyDate</h5>
+            </header>
+            <div class="post-description">
+                @post.Summary
+            </div>
+        </section>
+        </text>
+    }
+</div>
+

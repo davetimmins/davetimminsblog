@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "davetimmins blog";
+}
+<div class="col-xs-12 hidden-sm hidden-md hidden-lg"></div>
+<div id="postsList"></div>
+<script id="summaryTemplate" type="text/x-jquery-tmpl">
+    <article>
+        <div class="row">
+            <div class="hidden-xs col-sm-3 col-md-2">
+                {{html SummaryImageMarkup}}
+            </div>
+            <div class="col-xs-12 col-sm-9 col-md-10">
+                <div class="row">
+                    <h2 class="entry-title">
+                        <a href="${RelativePostUrl}">${Title}</a>
+                    </h2>
+                    <h6>${FriendlyDate} <a href="${RelativePostCommentsUrl}" data-disqus-identifier="${PostId}" class="badge"><i class="icon-comments"></i></a></h6>
+                </div>
+                <div class="row">
+                    <p>${Summary}</p>
+                </div>
+            </div>
+        </div>
+    </article>
+</script>
+@section Js{
+    <script defer async type="text/javascript" src="Scripts/loadposts.min.js"></script>
+}

@@ -1,0 +1,39 @@
+﻿@inherits ViewPage<BlogPostEntryModel>
+@{
+    ViewBag.Title = Model.Title;
+    ViewBag.Description = Model.Summary;
+    ViewBag.Identifier = Model.PostId;
+    ViewBag.Previous = Model.Previous;
+    ViewBag.Next = Model.Next;       
+}
+@section twitterCardTags {
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="davetimmins">
+    <meta name="twitter:title" content="@Model.Title">
+    <meta name="twitter:description" content="@Model.Summary">
+    <meta name="twitter:creator" content="davetimmins" />
+}
+<h1>@Model.Title</h1>
+<h5><i class="fa fa-calendar-o"></i> @Model.FriendlyDate</h5>
+<i class="fa fa-tags"></i>
+@foreach (String tag in Model.Tags)
+{
+    <text><a href="/blogposts/@tag"><span class="label label-default">@tag</span></a></text>
+}
+@Html.Partial(Model.FriendlyPathName)
+@Html.Partial("PostNavigation")
+@Html.Partial("Social")
+@Html.Partial("Comments")
+@section scripts {
+<script src="//yandex.st/highlightjs/8.0/highlight.min.js"></script>
+<script type="text/javascript">
+    var disqus_shortname = 'davetimminsblog';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    hljs.initHighlightingOnLoad();
+</script>
+}

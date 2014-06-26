@@ -1,0 +1,13 @@
+﻿<div class="col-md-6">
+    @if (!String.IsNullOrWhiteSpace(ViewBag.Previous))
+    { 
+        <a href="@ViewBag.Previous" class="pull-left"><i class="fa fa-chevron-left"></i>  Previous</a>
+    }
+</div>
+<div class="col-md-6">
+    @if (!String.IsNullOrWhiteSpace(ViewBag.Next))
+    { 
+        <a href="@ViewBag.Next" class="pull-right">Next  <i class="fa fa-chevron-right"></i></a>
+    }
+</div>
+<br />
