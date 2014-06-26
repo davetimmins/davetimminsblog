@@ -175,7 +175,7 @@
     <Content Include="Views\Shared\posts\Randomer.md" />
     <Content Include="Views\Shared\posts\Fakeator.md" />
     <Content Include="Views\Shared\posts\ArcGIS-PCL-Update.md" />
-    <None Include="Views\Shared\posts\ThisBlog.md" />
+    <Content Include="Views\Shared\posts\ThisBlog.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
