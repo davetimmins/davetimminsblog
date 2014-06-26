@@ -85,7 +85,7 @@ public class BlogPostFeed : IReturn&lt;SyndicationFeed&gt;
 
 The first request DTO returns blog posts which can be filtered by tags. The next gets a blog post entry by its date and name and the last gets the feed.
 
-The entire [service code]() is only around 100 lines including the request DTOs so if you're interested check out the whole thing. Looking at the method to return post summaries you can see that if tags are specified then the results are filtered, otherwise all post summaries are returned.
+The entire [service code](https://github.com/davetimmins/davetimminsblog/blob/master/Blog.Web/Interface/BlogService.cs) is only around 100 lines including the request DTOs so if you're interested check out the whole thing. Looking at the method to return post summaries you can see that if tags are specified then the results are filtered, otherwise all post summaries are returned.
 
 <pre><code>[DefaultView("Summary")]
 public object Get(BlogPosts request)
@@ -116,14 +116,14 @@ public object Get(BlogPosts request)
 	});
 }</code></pre>
 
-The other thing to note here is the default view attribute. This means that the route at `/blogposts/{Tags}` will render the view called `Summary`. That view is just a razor view that displays the list of returned post summaries. I mentioned earlier that I wanted my posts as Markdown though remember and another great feature of ServiceStack is that this is supported when using the Razor view engine. All you need to do is register the Razor format plugin in your `AppHost` along with the [other code]() used to initialise the site and now you can use `.cshtml` and/or `.md` files for content.
+The other thing to note here is the default view attribute. This means that the route at `/blogposts/{Tags}` will render the view called `Summary`. That view is just a razor view that displays the list of returned post summaries. I mentioned earlier that I wanted my posts as Markdown though remember and another great feature of ServiceStack is that this is supported when using the Razor view engine. All you need to do is register the Razor format plugin in your `AppHost` along with the [other code](https://github.com/davetimmins/davetimminsblog/blob/master/Blog.Web/Global.asax.cs#L55) used to initialise the site and now you can use `.cshtml` and/or `.md` files for content.
 
 For comments I added [Disqus](https://disqus.com/) as it looked the most common and mature offering. It was pretty trivial to add and their documentation is very clear and easy to follow.
 
 Social sharing is implemented using basic links to the various sharing url's available from Twitter, Facebook and Google+.
 
-For the feed I had to do a bit of extra work in order to return a custom media type of `application/rss+xml`. Thankfully this is another area that ServiceStack makes simple and a quick search on the internet gave me the [solution]().
+For the feed I had to do a bit of extra work in order to return a custom media type of `application/rss+xml`. Thankfully this is another area that ServiceStack makes simple and a quick search on the internet gave me the [solution](https://github.com/davetimmins/davetimminsblog/blob/master/Blog.Web/Global.asax.cs#L93).
 
 All told it only took a few hours to get everything up and running (not including authoring content) and thanks to some fantastic free offerings from the folks at [GitHub](https://github.com/), [Microsoft Azure](http://azure.microsoft.com/) and [AppVeyor](http://www.appveyor.com/) I now have what you see here being built, deployed and run seamlessly.
 
-Feel free to take a look at this project on [my GitHub repository]() and any feedback is welcome.
+Feel free to take a look at this project on [my GitHub repository](https://github.com/davetimmins/davetimminsblog) and any feedback is welcome.
