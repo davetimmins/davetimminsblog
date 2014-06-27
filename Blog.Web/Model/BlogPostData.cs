@@ -8,11 +8,22 @@ namespace Blog.Web.Model
     public static class BlogPostData
     {
         const String Author = "Dave Timmins";
-
+        
         public static List<BlogPost> SeedData()
         {
             return new List<BlogPost>
             {
+                new BlogPost
+                { 
+                    Author = Author,
+                    Title = "Using ArcGIS Server with Xamarin Forms Maps",
+                    PostId = "ArcGISServerXamarinFormsMaps",
+                    FriendlyPathName = "ArcGIS-Server-Xamarin-Forms-Maps",
+                    Tags = new List<String>{ "Development", "OSS", "Xamarin", "ArcGIS" },
+                    DatePublished = new DateTime(2014, 6, 27, 0, 0, 0, 0, DateTimeKind.Utc),
+                    SummaryImageMarkup = @"<img alt='Xamarin' class='post-avatar pure-img summary-img' src='https://avatars3.githubusercontent.com/u/790012?s=240' />",
+                    Summary = "Xamarin recently released Xamarin Forms for cross platform UI development and maps were an additional component of that. This post shows how you can add data from ArcGIS Server to your Xamarin Maps using the ArcGIS.PCL.XamarinMaps NuGet package."
+                },
                 new BlogPost
                 { 
                     Author = Author,

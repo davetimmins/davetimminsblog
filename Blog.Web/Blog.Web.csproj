@@ -120,6 +120,7 @@
     <Content Include="Assets\oauth2.jpg" />
     <Content Include="Assets\oauth3.jpg" />
     <Content Include="Assets\logoteched.png" />
+    <Content Include="Assets\xamarinmaps.png" />
     <Content Include="Content\blog.css" />
     <Content Include="Content\blog.min.css">
       <DependentUpon>blog.css</DependentUpon>
@@ -177,6 +178,7 @@
     <Content Include="Views\Shared\posts\Fakeator.md" />
     <Content Include="Views\Shared\posts\ArcGIS-PCL-Update.md" />
     <Content Include="Views\Shared\posts\ThisBlog.md" />
+    <Content Include="Views\Shared\posts\ArcGIS-Server-Xamarin-Forms-Maps.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
