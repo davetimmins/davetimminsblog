@@ -39,6 +39,6 @@ If we run the code we get our data nicely displayed on the map control.
 
 <img src="/Assets/xamarinmaps.png" alt="Xamarin Maps with ArcGIS data" class="pure-img"/>
 
-You could also go the other way and post data that was captured on the device to an ArcGSI Server feature service using the `ApplyEdits` operation.
+You could also go the other way and post data that was captured on the device to an ArcGIS Server feature service using the `ApplyEdits` operation.
 
 Hopefully this gives you a good starting point to working with these libraries. Feel free to comment here or raise an issue on [GitHub](https://github.com/davetimmins/ArcGIS.PCL.XamarinMaps) if you have any feedback.
