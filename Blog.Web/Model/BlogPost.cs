@@ -42,7 +42,7 @@ public class BlogPost
 
     public String FriendlyDate { get { return DatePublished.ToString("MMMM dd, yyyy"); } }
 
-    public String RelativePostUrl { get { return String.Format("/post/{0:yyyy}/{0:MMMM}/{1}/", DatePublished, FriendlyPathName); } }
+    public String RelativePostUrl { get { return String.Format("/post/{0:yyyy}/{0:MMMM}/{1}/", DatePublished, FriendlyPathName).ToLower(); } }
 
     public String RelativePostCommentsUrl { get { return RelativePostUrl + "#disqus_thread"; } }
 }
@@ -58,7 +58,7 @@ public class BlogPost
             Tags = blogpost.Tags;
             PostId = blogpost.PostId;
             FriendlyDate = blogpost.DatePublished.ToString("MMMM dd, yyyy");
-            FriendlyPathName = blogpost.FriendlyPathName;
+            FriendlyPathName = blogpost.FriendlyPathName.ToLower();
         }
 
         public String Title { get; set; }
@@ -70,7 +70,7 @@ public class BlogPost
         public String Previous { get; set; }
 
         public String Next { get; set; }
-        
+
         public String PostId { get; set; }
 
         public String FriendlyDate { get; set; }

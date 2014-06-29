@@ -18,7 +18,7 @@
 <i class="fa fa-tags"></i>
 @foreach (String tag in Model.Tags)
 {
-    <text><a href="/blogposts/@tag"><span class="label label-default">@tag</span></a></text>
+    <text><a href="/blogposts/@tag.ToLower()"><span class="label label-default">@tag</span></a></text>
 }
 <article>
 @Html.Partial(Model.FriendlyPathName)
