@@ -49,7 +49,7 @@ namespace Blog.Web.Interface
             {
                 return base.Request.ToOptimizedResultUsingCache(this.Cache, UrnId.Create<BlogPostsModel>(String.Join("-", request.Tags)), TimeSpan.FromMinutes(5), () =>
                 {
-                    return new BlogPostsModel { Posts = Db.Select<BlogPost>().Where<BlogPost>(p => request.Tags.Intersect(p.Tags).Any()).OrderByDescending(b => b.DatePublished).ToList() };
+                    return new BlogPostsModel { Posts = Db.Select<BlogPost>().Where<BlogPost>(p => request.Tags.Intersect(p.Tags.Select(s => s.ToLowerInvariant())).Any()).OrderByDescending(b => b.DatePublished).ToList() };
                 });
             }
             return base.Request.ToOptimizedResultUsingCache(this.Cache, UrnId.Create<BlogPostsModel>("all"), TimeSpan.FromMinutes(5), () =>
