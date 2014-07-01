@@ -158,6 +158,8 @@
     <Content Include="newrelic\extensions\extension.xsd">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Assets\Web.config" />
+    <Content Include="Content\Web.config" />
     <None Include="Properties\PublishProfiles\Amazon.pubxml" />
     <Content Include="Views\Shared\Social.cshtml" />
     <Content Include="Views\Shared\Comments.cshtml" />
