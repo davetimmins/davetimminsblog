@@ -16,6 +16,17 @@ namespace Blog.Web.Model
                 new BlogPost
                 { 
                     Author = Author,
+                    Title = "Simple Extent Sharing for your Map App",
+                    PostId = "SimpleExtentSharing",
+                    FriendlyPathName = "simple-extent-sharing",
+                    Tags = new List<String>{ "Development", "OSS", "ArcGIS" },
+                    DatePublished = new DateTime(2014, 6, 27, 0, 0, 0, 0, DateTimeKind.Utc),
+                    SummaryImageMarkup = @"<i class='fa fa-bookmark fa-mega post-avatar pure-img summary-img'></i>",
+                    Summary = "A simple way of saving and sharing the extent of your ArcGIS JS map app."
+                },
+                new BlogPost
+                { 
+                    Author = Author,
                     Title = "Using ArcGIS Server with Xamarin Forms Maps",
                     PostId = "ArcGISServerXamarinFormsMaps",
                     FriendlyPathName = "arcgis-server-xamarin-forms-maps",

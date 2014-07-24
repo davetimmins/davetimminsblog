@@ -42,34 +42,41 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="NewRelic.Api.Agent, Version=3.1.65.0, Culture=neutral, PublicKeyToken=06552fced0b33d87, processorArchitecture=MSIL">
+    <Reference Include="NewRelic.Api.Agent, Version=3.3.38.0, Culture=neutral, PublicKeyToken=06552fced0b33d87, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\NewRelic.Azure.WebSites.3.1.65.0\lib\NewRelic.Api.Agent.dll</HintPath>
+      <HintPath>..\packages\NewRelic.Azure.WebSites.3.3.38.0\lib\NewRelic.Api.Agent.dll</HintPath>
     </Reference>
-    <Reference Include="ServiceStack">
-      <HintPath>..\packages\ServiceStack.4.0.22\lib\net40\ServiceStack.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.Client">
-      <HintPath>..\packages\ServiceStack.Client.4.0.22\lib\net40\ServiceStack.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.Common">
-      <HintPath>..\packages\ServiceStack.Common.4.0.22\lib\net40\ServiceStack.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.Interfaces">
-      <HintPath>..\packages\ServiceStack.Interfaces.4.0.22\lib\net40\ServiceStack.Interfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.OrmLite">
-      <HintPath>..\packages\ServiceStack.OrmLite.4.0.22\lib\net40\ServiceStack.OrmLite.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.OrmLite.Sqlite.Windows, Version=4.0.22.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="ServiceStack, Version=4.0.23.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\ServiceStack.OrmLite.Sqlite.Windows.4.0.22\lib\net40\ServiceStack.OrmLite.Sqlite.Windows.dll</HintPath>
+      <HintPath>..\packages\ServiceStack.4.0.23\lib\net40\ServiceStack.dll</HintPath>
     </Reference>
-    <Reference Include="ServiceStack.Razor">
-      <HintPath>..\packages\ServiceStack.Razor.4.0.22\lib\net45\ServiceStack.Razor.dll</HintPath>
+    <Reference Include="ServiceStack.Client, Version=4.0.23.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ServiceStack.Client.4.0.23\lib\net40\ServiceStack.Client.dll</HintPath>
     </Reference>
-    <Reference Include="ServiceStack.Text">
-      <HintPath>..\packages\ServiceStack.Text.4.0.22\lib\net40\ServiceStack.Text.dll</HintPath>
+    <Reference Include="ServiceStack.Common, Version=4.0.23.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ServiceStack.Common.4.0.23\lib\net40\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=4.0.0.0, Culture=neutral, PublicKeyToken=e06fbc6124f57c43, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ServiceStack.Interfaces.4.0.23\lib\net40\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite, Version=4.0.23.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ServiceStack.OrmLite.4.0.23\lib\net40\ServiceStack.OrmLite.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite.Sqlite.Windows, Version=4.0.23.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ServiceStack.OrmLite.Sqlite.Windows.4.0.23\lib\net40\ServiceStack.OrmLite.Sqlite.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Razor, Version=4.0.23.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ServiceStack.Razor.4.0.23\lib\net45\ServiceStack.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text, Version=4.0.23.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ServiceStack.Text.4.0.23\lib\net40\ServiceStack.Text.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.SQLite, Version=1.0.93.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
@@ -89,7 +96,7 @@
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=e06fbc6124f57c43, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\ServiceStack.Razor.4.0.22\lib\net45\System.Web.Razor.dll</HintPath>
+      <HintPath>..\packages\ServiceStack.Razor.4.0.23\lib\net45\System.Web.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -121,7 +128,14 @@
     </Content>
     <Content Include="Global.asax" />
     <Content Include="newrelic\extensions\CoreInstrumentation.xml" />
+    <Content Include="newrelic\extensions\Providers\TransactionContext\Asp\NewRelic.Agent.Extensions.dll" />
+    <Content Include="newrelic\extensions\Providers\TransactionContext\Asp\NewRelic.Providers.TransactionContext.Asp.Repacked.dll" />
+    <Content Include="newrelic\extensions\Providers\TransactionContext\Default\NewRelic.Agent.Extensions.dll" />
+    <Content Include="newrelic\extensions\Providers\TransactionContext\Default\NewRelic.Providers.TransactionContext.Default.Repacked.dll" />
+    <Content Include="newrelic\extensions\Providers\TransactionContext\Wcf3\NewRelic.Agent.Extensions.dll" />
+    <Content Include="newrelic\extensions\Providers\TransactionContext\Wcf3\NewRelic.Providers.TransactionContext.Wcf3.Repacked.dll" />
     <Content Include="newrelic\NewRelic.Agent.Core.dll" />
+    <Content Include="newrelic\NewRelic.Agent.Extensions.dll" />
     <Content Include="newrelic\NewRelic.Profiler.dll" />
     <Content Include="Views\Shared\BlogPostEntry.cshtml" />
     <Content Include="Views\Shared\Summary.cshtml" />
@@ -154,12 +168,15 @@
     <Content Include="Views\Shared\posts\Enhancing-GIS-WebApps-with-SignalR.md" />
     <Content Include="Views\Shared\posts\Tech-Ed-NZ-2013.md" />
     <Content Include="packages.config" />
+    <Content Include="Assets\Web.config" />
+    <Content Include="Content\Web.config" />
     <Content Include="newrelic\newrelic.config" />
     <Content Include="newrelic\extensions\extension.xsd">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Assets\Web.config" />
-    <Content Include="Content\Web.config" />
+    <None Include="newrelic\newrelic.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\PublishProfiles\Amazon.pubxml" />
     <Content Include="Views\Shared\Social.cshtml" />
     <Content Include="Views\Shared\Comments.cshtml" />
@@ -175,6 +192,7 @@
     <Content Include="Views\Shared\posts\ArcGIS-PCL-Update.md" />
     <Content Include="Views\Shared\posts\ThisBlog.md" />
     <Content Include="Views\Shared\posts\ArcGIS-Server-Xamarin-Forms-Maps.md" />
+    <Content Include="Views\Shared\posts\simple-extent-sharing.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
