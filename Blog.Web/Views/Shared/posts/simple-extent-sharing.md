@@ -2,7 +2,7 @@
 
 We only need to do 2 things for this. First, since we want to know the extent we need to hook into the map `extent-change` event and update the `location.hash`. Second, when we start the app we need to check the `location.hash` and if an extent is there then set the map extent accordingly. That's it!
 
-Here's the entire code for the functionality and a [live demo](http://joosh.azurewebsites.net) 
+Here's the entire code for the functionality and a [live demo](http://joosh.azurewebsites.net). The source for the demo is on [GitHub](https://github.com/davetimmins/Joosh) 
 
 <pre><code>define([
     'esri/geometry/Extent',
@@ -27,27 +27,25 @@ Here's the entire code for the functionality and a [live demo](http://joosh.azur
 
                 if (this.map) {
 
-                    this.map.on('load', function () {
-                        if (window.location.hash) {
-                            var hashExtent = dojo.fromJson('{' + window.location.hash.replace('#', '') + '}');
-                            var savedExtent = new Extent(
-                            {
-                                xmin: hashExtent.xmin,
-                                ymin: hashExtent.ymin,
-                                xmax: hashExtent.xmax,
-                                ymax: hashExtent.ymax,
-                                spatialReference: this.map.spatialReference
-                            });
-                            this.map.setExtent(savedExtent);
-                        }
-
-                        this.map.on('extent-change', function (e) {
-                            window.location.hash =
-                                "xmin:" + this.map.extent.xmin +
-                                ",ymin:" + this.map.extent.ymin +
-                                ",xmax:" + this.map.extent.xmax +
-                                ",ymax:" + this.map.extent.ymax;
+                    if (window.location.hash) {
+                        var hashExtent = dojo.fromJson('{' + window.location.hash.replace('#', '') + '}');
+                        var savedExtent = new Extent(
+                        {
+                            xmin: hashExtent.xmin,
+                            ymin: hashExtent.ymin,
+                            xmax: hashExtent.xmax,
+                            ymax: hashExtent.ymax,
+                            spatialReference: this.map.spatialReference
                         });
+                        this.map.setExtent(savedExtent);
+                    }
+
+                    this.map.on('extent-change', function (e) {
+                        window.location.hash =
+                            "xmin:" + this.map.extent.xmin +
+                            ",ymin:" + this.map.extent.ymin +
+                            ",xmax:" + this.map.extent.xmax +
+                            ",ymax:" + this.map.extent.ymax;
                     });
                 }
             }
