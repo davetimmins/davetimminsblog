@@ -27,7 +27,7 @@
 @Html.Partial("Social")
 @Html.Partial("Comments")
 @section scripts {
-<script src="//yandex.st/highlightjs/8.0/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"></script>
 <script type="text/javascript">
     var disqus_shortname = 'davetimminsblog';
     (function () {
@@ -36,6 +36,6 @@
         s.src = '//' + disqus_shortname + '.disqus.com/count.js';
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
-    hljs.initHighlightingOnLoad();
+    if (hljs) hljs.initHighlightingOnLoad();
 </script>
 }
