@@ -32,7 +32,7 @@ namespace Blog.Web.Model
                     FriendlyPathName = "arcgis-server-xamarin-forms-maps",
                     Tags = new List<String>{ "Development", "OSS", "Xamarin", "ArcGIS" },
                     DatePublished = new DateTime(2014, 6, 27, 0, 0, 0, 0, DateTimeKind.Utc),
-                    SummaryImageMarkup = @"<img width='120' height='90' alt='Xamarin' class='post-avatar pure-img summary-img' src='https://avatars3.githubusercontent.com/u/790012?s=120' srcset='https://avatars3.githubusercontent.com/u/790012?s=240 2x' />",
+                    SummaryImageMarkup = @"<img width='120' height='90' alt='Xamarin' class='post-avatar pure-img summary-img' src='https://avatars3.githubusercontent.com/u/790012?s=120' srcset='https://avatars3.githubusercontent.com/u/790012?s=120 1x, https://avatars3.githubusercontent.com/u/790012?s=240 2x' />",
                     Summary = "Xamarin recently released Xamarin Forms for cross platform UI development and maps were an additional component of that. This post shows how you can add data from ArcGIS Server to your Xamarin Maps using the ArcGIS.PCL.XamarinMaps NuGet package."
                 },
                 new BlogPost
@@ -65,7 +65,7 @@ namespace Blog.Web.Model
                     FriendlyPathName = "fakeator",
                     Tags = new List<String>{ "ArcGIS Online", "Nancy", "Development" },
                     DatePublished = new DateTime(2014, 4, 11, 0, 0, 0, 0, DateTimeKind.Utc),
-                    SummaryImageMarkup = @"<img width='120' height='90' alt='Fakeator' class='post-avatar pure-img summary-img' src='/assets/logofakeator.png' srcset='/assets/logofakeator-2x.png 2x' />",
+                    SummaryImageMarkup = @"<img width='120' height='90' alt='Fakeator' class='post-avatar pure-img summary-img' src='/assets/logofakeator.png' srcset='/assets/logofakeator.png 1x, /assets/logofakeator-2x.png 2x' />",
                     Summary = "Building a fake locator service using Nancy that works with the ArcGIS JS geocode dijit."
                 },
                 new BlogPost
@@ -76,7 +76,7 @@ namespace Blog.Web.Model
                     FriendlyPathName = "randomer",
                     Tags = new List<String>{ "ArcGIS Online", "OSS", "Development" },
                     DatePublished = new DateTime(2014, 4, 2, 0, 0, 0, 0, DateTimeKind.Utc),
-                    SummaryImageMarkup = @"<img width='120' height='90' alt='Randomer' class='post-avatar pure-img summary-img' src='/assets/logorandomer.png' srcset='/assets/logorandomer-2x.png 2x' />",
+                    SummaryImageMarkup = @"<img width='120' height='90' alt='Randomer' class='post-avatar pure-img summary-img' src='/assets/logorandomer.png' srcset='/assets/logorandomer.png 1x, /assets/logorandomer-2x.png 2x' />",
                     Summary = "A look at automatically generating random data for hosted feature services on ArcGIS Online."
                 },
                 new BlogPost
@@ -87,7 +87,7 @@ namespace Blog.Web.Model
                     FriendlyPathName = "esri-devsummit-2014",
                     Tags = new List<String>{ "ArcGIS", "Learning", "Conference" },
                     DatePublished = new DateTime(2014, 3, 31, 0, 0, 0, 0, DateTimeKind.Utc),
-                    SummaryImageMarkup = @"<img width='120' height='90' alt='DevSummit 2014' class='post-avatar pure-img summary-img' src='/assets/logodevsummit.png' srcset='/assets/logodevsummit-2x.png 2x' />",
+                    SummaryImageMarkup = @"<img width='120' height='90' alt='DevSummit 2014' class='post-avatar pure-img summary-img' src='/assets/logodevsummit.png' srcset='/assets/logodevsummit.png 1x, /assets/logodevsummit-2x.png 2x' />",
                     Summary = "My thoughts on the 9th Esri Internationl Developer Summit in Palm Springs."
                 },
                 new BlogPost
@@ -98,7 +98,7 @@ namespace Blog.Web.Model
                     FriendlyPathName = "tech-ed-nz-2013",
                     Tags = new List<String>{ "TechEd", "Learning", "Conference" },
                     DatePublished = new DateTime(2013, 9, 15, 0, 0, 0, 0, DateTimeKind.Utc),
-                    SummaryImageMarkup = @"<img width='120' height='90' alt='TechEd 2013' class='post-avatar pure-img summary-img' src='/assets/logoteched.png' srcset='/assets/logoteched-2x.png 2x' />",
+                    SummaryImageMarkup = @"<img width='120' height='90' alt='TechEd 2013' class='post-avatar pure-img summary-img' src='/assets/logoteched.png' srcset='/assets/logoteched.png 1x, /assets/logoteched-2x.png 2x' />",
                     Summary = "With TechEd 2013 having just finished here in New Zealand I thought I'd take the opportunity to summarize my thoughts on the conference this year."
                 },
                 new BlogPost
@@ -142,7 +142,7 @@ namespace Blog.Web.Model
                     FriendlyPathName = "enhancing-gis-webapps-with-signalr",
                     Tags = new List<String>{ "ArcGIS", "Development", "SignalR" },
                     DatePublished = new DateTime(2011, 11, 21, 0, 0, 0, 0, DateTimeKind.Utc),
-                    SummaryImageMarkup = @"<img width='120' height='90' alt='MapR' class='post-avatar pure-img summary-img' src='/assets/mapr.jpg' srcset='/assets/mapr-2x.png 2x' />",
+                    SummaryImageMarkup = @"<img width='120' height='90' alt='MapR' class='post-avatar pure-img summary-img' src='/assets/mapr.jpg' srcset='/assets/mapr.jpg 1x, /assets/mapr-2x.jpg 2x' />",
                     Summary = "A few weeks ago I saw this cool new open source project called SignalR and was wondering about ways to incorporate it into the type of GIS web applications that I usually work on."
                 }
             };
