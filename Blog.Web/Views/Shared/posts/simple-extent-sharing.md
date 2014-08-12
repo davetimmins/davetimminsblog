@@ -4,7 +4,7 @@ We only need to do 2 things for this. First, since we want to know the extent we
 
 Here's the entire code for the functionality and a [live demo](http://joosh.azurewebsites.net). The source for the demo is on [GitHub](https://github.com/davetimmins/Joosh) 
 
-<pre><code>define([
+<pre><code class='js'>define([
     'esri/geometry/Extent',
     'dojo/_base/lang',
     'dojo/_base/declare',
@@ -55,7 +55,7 @@ Here's the entire code for the functionality and a [live demo](http://joosh.azur
 
 Now to enable this you just need
 
-<pre><code>this.map = new Map('map', config.options);
+<pre><code class='js'>this.map = new Map('map', config.options);
 
 require(['joosh/Bookmarker'], function (Bookmarker) {
     new Bookmarker({ map: this.map});

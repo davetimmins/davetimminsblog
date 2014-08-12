@@ -14,14 +14,14 @@ In order to work with the geocoder dijit I need to make sure that I am providing
 
 So in my search service I'll define a route for that
 
-<pre><code>Get[@"/GeocodeServer/findAddressCandidates", true] = async (x, ct) =>
+<pre><code class='cs'>Get[@"/GeocodeServer/findAddressCandidates", true] = async (x, ct) =>
 {
 	return await EsriSearch();
 };</code></pre>
 
 As well as having my service I need to tell the client how to use it. To do this I can configure the geocoder dijit to use a custom locator with the following
 
-<pre><code>require(["esri/map", "esri/dijit/Geocoder", "dojo/domReady!"], function (Map, Geocoder)
+<pre><code class='js'>require(["esri/map", "esri/dijit/Geocoder", "dojo/domReady!"], function (Map, Geocoder)
 {
 	var map = new Map("map", {
 		basemap: "topo",
@@ -55,10 +55,10 @@ You may have noticed that I am including `/GeocodeServer` in the url paths above
 
 The search service implementation just returns the response from an existing valid Locator service.
 
-<pre><code>Get[@"/GeocodeServer"] = _ =>
+<pre><code class='cs'>Get[@"/GeocodeServer"] = _ =>
 {
 	var content = new HttpClient().GetStringAsync("http://geocode.arcgis.com/arcgis/rest/services/World/geocodeserver?f=json").Result;
-			   
+
 	return Response.AsText(content).WithContentType("application/json");
 };</code></pre>
 
@@ -68,7 +68,7 @@ To provide some flexibility with the searching I allow for both query and find o
 
 So that the search can be easily changed / configured I have a basic JSON configuration file with my search options which for the published example looks like
 
-<pre><code>{
+<pre><code class='json'>{
 "querySearches":[
 {
 	"endpoint":"http://s3.demos.eaglegis.co.nz/ArcGIS/rest/services/LINZ/crs/MapServer/1",
@@ -77,11 +77,11 @@ So that the search can be easily changed / configured I have a basic JSON config
 },
 {
 	"endpoint":"http://sampleserver6.arcgisonline.com/arcgis/rest/services/WorldTimeZones/MapServer/1",
-	"expression":"ZONE = {0}", 
+	"expression":"ZONE = {0}",
 	"type":"esriGeometryPolygon",
 	"regex":"(-?[0-9]|[0-9]\\d|13)$"
 }],
-"findSearches":[	
+"findSearches":[
 {
 	"endpoint":"http://sampleserver6.arcgisonline.com/arcgis/rest/services/SampleWorldCities/MapServer",
 	"searchFields":["CITY_NAME","CONTINENT"],
@@ -93,7 +93,7 @@ So that the search can be easily changed / configured I have a basic JSON config
 
 With all this in place the final step is to ensure that I am returning the correct reponse type. Again this is a case of checking the [REST API documentation](http://resources.arcgis.com/en/help/arcgis-rest-api/#/Find_Address_Candidates/02r3000000wv000000/) and then converting the results from the various requests into the correct type. In this case I want a result that returns a list of candidate locations and an associated spatial reference.
 
-<pre><code>{
+<pre><code class='json'>{
 "spatialReference": {"wkid" : 4326},
 "candidates" : [
   {

@@ -15,7 +15,7 @@ The details for parameters and urls to call are on the ArcGIS website so I'll le
 
 There is already an OAuthProvider base class for us to inherit from so we'll base our implementation on that. The only other steps we need to follow are to register our new authentication provider with ServiceStack by including it as an authentication method in our AppHost
 
-<pre><code>public class ArcGISAuthProvider : OAuthProvider ...
+<pre><code class='cs'>public class ArcGISAuthProvider : OAuthProvider ...
  
 //Register all Authentication methods you want to enable for this web app.            
 Plugins.Add(new AuthFeature(() => new CustomUserSession(), //Use your own typed Custom UserSession type
@@ -34,7 +34,7 @@ Plugins.Add(new AuthFeature(() => new CustomUserSession(), //Use your own typed 
 
 then add the configuration application settings to our web.config to pass through the Client ID and Client Secret that we created earlier. The convention the ServiceStack uses for these is 
 
-<pre><code>&lt;add key="oauth.arcgis.ConsumerKey" value=""/>
+<pre><code class='xml'>&lt;add key="oauth.arcgis.ConsumerKey" value=""/>
 &lt;add key="oauth.arcgis.ConsumerSecret" value=""/>
 </code></pre>
 
@@ -44,7 +44,7 @@ Finally you will need some UI to show the user a link to click and choose to sig
 
 In Index.cshtml under Views/Shared
 
-<pre><code>&lt;div id="arcgis-signin">
+<pre><code class='html'>&lt;div id="arcgis-signin">
     &lt;a href="~/api/auth/arcgis">Sign in&lt;/a>
 &lt;/div>
 </code></pre>
@@ -55,7 +55,7 @@ When you run the app and click on the sign in with ArcGIS link you will be redir
 
 The full code for the ArcGISAuthProvider is listed below. Thanks for reading.
 
-<pre><code>using ServiceStack.Configuration;
+<pre><code class='cs'>using ServiceStack.Configuration;
 using ServiceStack.ServiceHost;
 using ServiceStack.ServiceInterface;
 using ServiceStack.ServiceInterface.Auth;

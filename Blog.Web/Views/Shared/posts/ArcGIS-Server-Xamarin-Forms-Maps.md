@@ -6,7 +6,7 @@ Since we can only add point data lets add some points! To speed things up I'll u
 
 To start we need to add the ArcGIS.PCL.XamarinMaps NuGet package which will tell you something simliar to what is below in its `readme` file. Then in the shared code project we can hook into the `MapViewModel` and load our data in the `LoadPins()` function rather than what is currently there. The code we need is just a few lines
 
-<pre><code>public async Task&lt;List&lt;Pin&gt;&gt; LoadPins()
+<pre><code class='cs'>public async Task&lt;List&lt;Pin&gt;&gt; LoadPins()
 {
     ExecuteLoadModelsCommand();
 

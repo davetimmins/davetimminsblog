@@ -36,7 +36,7 @@ There are also some common objects used for operations that are included. The mo
 Due to the project being a portable class library I have split the de/serialization out so that it is specific to each implementation. Each gateway needs an ISerializer implementation that will be used when calling resources. The test project has ServiceStack.Text and Json.NET [examples](https://github.com/davetimmins/ArcGIS.PCL/blob/master/ArcGIS.Test/ISerializer.cs).
 
 In addition to being able to used the typed operations above, you can also call any resource and get the data back by requesting a dynamic object as the return type. There is an example in the tests that shows this where the return is defined as
-<pre><code>public class AgsObject : ServiceStack.Text.JsonObject, IPortalResponse
+<pre><code class='cs'>public class AgsObject : ServiceStack.Text.JsonObject, IPortalResponse
 {
     [System.Runtime.Serialization.DataMember(Name = "error")]
     public ArcGISError Error { get; set; }
@@ -48,7 +48,7 @@ by using this type, the return value is created as a dictionary containing the r
 If you are still reading then hopefully you want to get the code and start using it. The quickest way to get started is to install the library using NuGet. Search for [ArcGIS.PCL](https://www.nuget.org/packages/ArcGIS.PCL/) in the package manager and install it, or you can get the code directly from [GitHub](https://github.com/davetimmins/ArcGIS.PCL/releases). Once you have the code the first thing to do is create your gateway and ISerializer implementation (or use an existing example).
 
 Some typical uses could be
-<pre><code>// ArcGIS Server with non secure resources
+<pre><code class='cs'>// ArcGIS Server with non secure resources
 public class ArcGISGateway : PortalGateway
 {
     public ArcGISGateway(ISerializer serializer)

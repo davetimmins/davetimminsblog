@@ -6,7 +6,7 @@ Now there are 2 parts that we need to code, the server side and client side impl
 
 Add a new class that inherits the abstract Microsoft.AspNet.SignalR.Hub class.
 
-<pre><code>public class LocationHub : Hub
+<pre><code class='cs'>public class LocationHub : Hub
 {
     static ConcurrentDictionary<string, object> _graphics = new ConcurrentDictionary<string, object>();
 
@@ -37,25 +37,25 @@ Add a new class that inherits the abstract Microsoft.AspNet.SignalR.Hub class.
 
 Very simple. Now we need to add the client side code to call and handle these methods. Start by creating a new html page and add references to the jQuery and SignalR scripts.
 
-<pre><code>&lt;script src="Scripts/jquery-1.6.4.min.js">&lt;/script>
+<pre><code class='html'>&lt;script src="Scripts/jquery-1.6.4.min.js">&lt;/script>
 &lt;script src="Scripts/jquery.signalR-1.0.1.min.js">&lt;/script>
 &lt;script src="signalr/hubs">&lt;/script>
 </code></pre>
 
 In order to use the methods we just defined we need to create the proxy reference. Then we can either invoke or handle the various methods.
 
-<pre><code>var connection = $.hubConnection();
+<pre><code class='js'>var connection = $.hubConnection();
 locationConnection = connection.createHubProxy('locationHub');
 </code></pre>
 
 Now we have the proxy we can call the methods defined for it. So for the above example, if I want to call the Add method for the LocationHub on the server I would use
 
-<pre><code>locationConnection.invoke('add', graphic.toJson());
+<pre><code class='js'>locationConnection.invoke('add', graphic.toJson());
 </code></pre>
 
 where I’m passing the graphic as a Json string value I want to use (the parameter binding is done automatically but you need to define the correct type). Now to handle what happens when the Add method is called I need to add the addGraphic handler on the client since that is called from the server, once again making sute that the definition matches what was used on the server. The convention we can use is
 
-<pre><code>locationConnection.on('addGraphic', function (id, json) {
+<pre><code class='js'>locationConnection.on('addGraphic', function (id, json) {
     ....
 });</code></pre>
 

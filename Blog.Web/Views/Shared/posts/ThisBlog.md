@@ -15,7 +15,7 @@ The basic functionality I wanted was
 
 I'm a big fan of [ServiceStack](https://servicestack.net/) so I started out by creating a new website using that. Next I created a model class for my blog posts and I ended up with this
 
-<pre><code>public class BlogPost
+<pre><code class='cs'>public class BlogPost
 {
 	[AutoIncrement]
 	public int Id { get; set; }
@@ -62,7 +62,7 @@ I use this as an in memory data model but it could be persisted to a database if
 
 Trying to follow ServiceStack's design philosophy I then needed my API to retrieve posts. Thinking of what requests I would need to handle I defined the following routes
 
-<pre><code>[Route("/blogposts")]
+<pre><code class='cs'>[Route("/blogposts")]
 [Route("/blogposts/{Tags}")]
 public class BlogPosts : IReturn&lt;BlogPostsModel&gt;
 {
@@ -87,7 +87,7 @@ The first request DTO returns blog posts which can be filtered by tags. The next
 
 The entire [service code](https://github.com/davetimmins/davetimminsblog/blob/master/Blog.Web/Interface/BlogService.cs) is only around 100 lines including the request DTOs so if you're interested check out the whole thing. Looking at the method to return post summaries you can see that if tags are specified then the results are filtered, otherwise all post summaries are returned.
 
-<pre><code>[DefaultView("Summary")]
+<pre><code  class='cs'>[DefaultView("Summary")]
 public object Get(BlogPosts request)
 {
 	if (request.Tags != null && request.Tags.Any())

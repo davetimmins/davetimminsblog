@@ -18,7 +18,7 @@ Of course I am running Fiddler whilst doing this so I can see the queries being 
 
 Since I am doing the logic on the server I used one of my other libraries [ArcGIS.PCL](https://github.com/davetimmins/ArcGIS.PCL) and extended it to allow me to have some ArcGIS Online operations. This is a matter of inspecting the json payload of a request and copying it then using Visual Studio and paste as JSON classes in order to create a typed version of the JSON request. Now I can use familiar tooling to write my code and hopefully reduce errors. The classes end up looking like (note that I have removed lots of properties that aren't needed for this solution)
 
-<pre><code>[DataContract]
+<pre><code class='cs'>[DataContract]
 public class SearchHostedFeatureServices : ArcGISServerOperation
 {
     public SearchHostedFeatureServices(ArcGISOnlineEndpoint endpoint, String username)

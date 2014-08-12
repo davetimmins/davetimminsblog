@@ -23,7 +23,7 @@ So what I've had to do so far is
 
 And now my final step is to make sure that NuGet knows what to do when a reference is added to this package. I can do this by adding platform specific dependencies in my .nuspec file and what I ended up with is this
 
-<pre><code>&lt;dependencies&gt;
+<pre><code class='xml'>&lt;dependencies&gt;
 	&lt;group targetFramework="net40"&gt;
 		&lt;dependency id="Microsoft.Bcl.Async" version="1.0.168" /&gt;
 		&lt;dependency id="Microsoft.Net.Http" version="2.2.22" /&gt;

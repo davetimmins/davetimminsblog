@@ -182,17 +182,13 @@
     <None Include="newrelic\newrelic.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Properties\PublishProfiles\Amazon.pubxml" />
     <Content Include="Views\Shared\Social.cshtml" />
     <Content Include="Views\Shared\Comments.cshtml" />
     <Content Include="Views\Shared\PostNavigation.cshtml" />
-    <None Include="Properties\PublishProfiles\azure.pubxml" />
-    <None Include="Properties\PublishProfiles\davetimmins %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\davetimmins %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\davetimmins - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\davetimmins - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\davetimmins.pubxml" />
-    <None Include="Properties\PublishProfiles\package.pubxml" />
     <Content Include="Views\Shared\posts\Esri-DevSummit-2014.md" />
     <Content Include="Views\Shared\posts\Randomer.md" />
     <Content Include="Views\Shared\posts\Fakeator.md" />
