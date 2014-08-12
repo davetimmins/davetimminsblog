@@ -1,23 +1,15 @@
 ﻿using Blog.Web.Model;
 using ServiceStack;
-using ServiceStack.Data;
-using ServiceStack.OrmLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.ServiceModel.Syndication;
 
 namespace Blog.Web.Interface
 {
     public class BlogService : Service
     {
-        public BlogService()
-        {
-            var dbConnection = this.TryResolve<IDbConnectionFactory>();
-            if (dbConnection == null || !Db.TableExists("BlogPost"))
-                throw new InvalidOperationException("BlogPost database table has not been configured.");
-        }
+        List<BlogPost> _data = new BlogPostData().SeedData();
 
         [DefaultView("BlogPostEntry")]
         public object Get(BlogPostEntry request)
@@ -27,14 +19,16 @@ namespace Blog.Web.Interface
             {
                 BlogPost blogpost = null;
 
-                var posts = Db.Select<BlogPost>().OrderByDescending(b => b.DatePublished).ToList();
+                var posts = _data.OrderByDescending(b => b.DatePublished).ToList();
                 for (int i = 0; i < posts.Count; i++)
                 {
                     var itemToCheck = posts[i];
                     if (String.Equals(itemToCheck.FriendlyPathName, request.FriendlyPathName, StringComparison.OrdinalIgnoreCase))
                     {
                         blogpost = posts[i];
-                        return new BlogPostEntryModel(blogpost, (i < (posts.Count - 1)) ? posts[i + 1].RelativePostUrl : String.Empty, (i > 0) ? posts[i - 1].RelativePostUrl : String.Empty);
+                        return new BlogPostEntryModel(blogpost, (i < (posts.Count - 1))
+                            ? posts[i + 1].RelativePostUrl
+                            : String.Empty, (i > 0) ? posts[i - 1].RelativePostUrl : String.Empty);
                     }
                 }
                 if (blogpost == null) throw HttpError.NotFound("Blogpost not found.");
@@ -49,12 +43,16 @@ namespace Blog.Web.Interface
             {
                 return base.Request.ToOptimizedResultUsingCache(this.Cache, UrnId.Create<BlogPostsModel>(String.Join("-", request.Tags)), TimeSpan.FromMinutes(5), () =>
                 {
-                    return new BlogPostsModel { Posts = Db.Select<BlogPost>().Where<BlogPost>(p => request.Tags.Intersect(p.Tags.Select(s => s.ToLowerInvariant())).Any()).OrderByDescending(b => b.DatePublished).ToList() };
+                    return new BlogPostsModel
+                    {
+                        Posts = _data.Where<BlogPost>(p => request.Tags.Intersect(p.Tags.Select(s => s.ToLowerInvariant()))
+                            .Any()).OrderByDescending(b => b.DatePublished).ToList()
+                    };
                 });
             }
             return base.Request.ToOptimizedResultUsingCache(this.Cache, UrnId.Create<BlogPostsModel>("all"), TimeSpan.FromMinutes(5), () =>
             {
-                return new BlogPostsModel { Posts = Db.Select<BlogPost>().OrderByDescending(b => b.DatePublished).ToList() };
+                return new BlogPostsModel { Posts = _data.OrderByDescending(b => b.DatePublished).ToList() };
             });
         }
 
@@ -64,7 +62,7 @@ namespace Blog.Web.Interface
             var feed = new SyndicationFeed("davetimmins blog", "Feed of blog posts from davetimmins.com", new Uri("http://davetimmins.com"));
             feed.Authors.Add(new SyndicationPerson("davetimminsblog@outlook.com", "Dave Timmins", "http://davetimmins.com"));
             var feedItems = new List<SyndicationItem>();
-            var posts = Db.Select<BlogPost>().OrderByDescending(b => b.DatePublished);
+            var posts = _data.OrderByDescending(b => b.DatePublished);
             foreach (var post in posts)
             {
                 var item = new SyndicationItem(

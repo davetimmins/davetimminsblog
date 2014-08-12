@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace Blog.Web.Model
 {
-    public static class BlogPostData
+    public class BlogPostData
     {
         const String Author = "Dave Timmins";
+        List<BlogPost> _data;
 
-        public static List<BlogPost> SeedData()
+        public List<BlogPost> SeedData()
         {
-            return new List<BlogPost>
+            return _data ?? (_data = new List<BlogPost>
             {
                 new BlogPost
                 { 
@@ -145,7 +144,7 @@ namespace Blog.Web.Model
                     SummaryImageMarkup = @"<img width='120' height='90' alt='MapR' class='post-avatar pure-img summary-img' src='/assets/mapr.jpg' srcset='/assets/mapr.jpg 1x, /assets/mapr-2x.jpg 2x' />",
                     Summary = "A few weeks ago I saw this cool new open source project called SignalR and was wondering about ways to incorporate it into the type of GIS web applications that I usually work on."
                 }
-            };
+            });
         }
     }
 }

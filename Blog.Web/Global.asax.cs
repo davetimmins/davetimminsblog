@@ -1,31 +1,14 @@
-﻿using Blog.Web.Model;
-using Funq;
+﻿using Funq;
 using ServiceStack;
-using ServiceStack.Data;
-using ServiceStack.Logging;
-using ServiceStack.MiniProfiler;
-using ServiceStack.MiniProfiler.Data;
-using ServiceStack.OrmLite;
 using ServiceStack.Razor;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.ServiceModel.Syndication;
-using System.Web;
-using System.Web.Security;
-using System.Web.SessionState;
 
 namespace Blog.Web
 {
-    // TODO : add tags service
-    // add post data model
-    // allow summary as html / rss from service
-    // change posts to be via service by id and route as data / title in service request
-
-
     public class Global : System.Web.HttpApplication
     {
         protected void Application_Start(object sender, EventArgs e)
@@ -58,20 +41,6 @@ namespace Blog.Web
 
         public override void Configure(Container container)
         {
-            container.Register<IDbConnectionFactory>(new OrmLiteConnectionFactory(":memory:", SqliteDialect.Provider)
-            {
-                ConnectionFilter = x => new ProfiledDbConnection(x, Profiler.Current)
-            });
-
-            using (var db = container.TryResolve<IDbConnectionFactory>().Open())
-            {
-                if (!db.TableExists("BlogPost"))
-                {
-                    db.CreateTableIfNotExists<BlogPost>();
-                    db.InsertAll(BlogPostData.SeedData());
-                }
-            }
-
             Plugins.RemoveAll(x => x is RequestInfoFeature);
             Plugins.RemoveAll(x => x is MetadataFeature);
             Plugins.RemoveAll(x => x is PredefinedRoutesFeature);
