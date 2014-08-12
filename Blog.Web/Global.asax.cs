@@ -44,6 +44,7 @@ namespace Blog.Web
             Plugins.RemoveAll(x => x is RequestInfoFeature);
             Plugins.RemoveAll(x => x is MetadataFeature);
             Plugins.RemoveAll(x => x is PredefinedRoutesFeature);
+            Plugins.RemoveAll(x => x is NativeTypesFeature);
 
             Plugins.Add(new RazorFormat());
             RssFormat.Register(this);
