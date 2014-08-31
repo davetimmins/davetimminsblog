@@ -42,9 +42,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="NewRelic.Api.Agent, Version=3.4.24.0, Culture=neutral, PublicKeyToken=06552fced0b33d87, processorArchitecture=MSIL">
+    <Reference Include="NewRelic.Api.Agent, Version=3.6.177.0, Culture=neutral, PublicKeyToken=06552fced0b33d87, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\NewRelic.Azure.WebSites.3.4.24.0\lib\NewRelic.Api.Agent.dll</HintPath>
+      <HintPath>..\packages\NewRelic.Azure.WebSites.3.6.177.0\lib\NewRelic.Api.Agent.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack, Version=4.0.30.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -97,6 +97,8 @@
     <Content Include="Assets\logofakeator-2x.png" />
     <Content Include="Assets\logofakeator.png" />
     <Content Include="Assets\logodevsummit.png" />
+    <Content Include="Assets\logonzeuc2014-2x.png" />
+    <Content Include="Assets\logonzeuc2014.png" />
     <Content Include="Assets\logorandomer-2x.png" />
     <Content Include="Assets\logorandomer.png" />
     <Content Include="Assets\logoteched-2x.png" />
@@ -149,6 +151,9 @@
     <Content Include="packages.config" />
     <Content Include="Assets\Web.config" />
     <Content Include="Content\Web.config" />
+    <Content Include="Views\Shared\Social.cshtml" />
+    <Content Include="Views\Shared\Comments.cshtml" />
+    <Content Include="Views\Shared\PostNavigation.cshtml" />
     <Content Include="newrelic\newrelic.config" />
     <Content Include="newrelic\extensions\extension.xsd">
       <SubType>Designer</SubType>
@@ -156,9 +161,6 @@
     <None Include="newrelic\newrelic.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Views\Shared\Social.cshtml" />
-    <Content Include="Views\Shared\Comments.cshtml" />
-    <Content Include="Views\Shared\PostNavigation.cshtml" />
     <None Include="Properties\PublishProfiles\davetimmins %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\davetimmins - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\davetimmins - Web Deploy.pubxml" />
@@ -170,6 +172,7 @@
     <Content Include="Views\Shared\posts\ThisBlog.md" />
     <Content Include="Views\Shared\posts\ArcGIS-Server-Xamarin-Forms-Maps.md" />
     <Content Include="Views\Shared\posts\simple-extent-sharing.md" />
+    <Content Include="Views\Shared\posts\nzeuc-2014.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

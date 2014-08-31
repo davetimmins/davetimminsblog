@@ -15,11 +15,21 @@ namespace Blog.Web.Model
                 new BlogPost
                 { 
                     Author = Author,
+                    Title = "New Zealand Esri User Conference 2014",
+                    PostId = "NZEUC2014",
+                    FriendlyPathName = "nzeuc-2014",
+                    Tags = new List<String>{ "ArcGIS", "Learning", "Conference" },
+                    DatePublished = new DateTime(2014, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                    SummaryImageMarkup = @"<img width='120' height='90' alt='Fakeator' class='post-avatar pure-img summary-img' src='/assets/logonzeuc2014.png' srcset='/assets/logonzeuc2014.png 1x, /assets/logonzeuc2014-2x.png 2x' />",
+                    Summary = "A note on our conference for this year and my presentations."
+                },new BlogPost
+                { 
+                    Author = Author,
                     Title = "Simple Extent Sharing for your Map App",
                     PostId = "SimpleExtentSharing",
                     FriendlyPathName = "simple-extent-sharing",
                     Tags = new List<String>{ "Development", "OSS", "ArcGIS" },
-                    DatePublished = new DateTime(2014, 6, 27, 0, 0, 0, 0, DateTimeKind.Utc),
+                    DatePublished = new DateTime(2014, 6, 30, 0, 0, 0, 0, DateTimeKind.Utc),
                     SummaryImageMarkup = @"<i class='fa fa-bookmark fa-mega post-avatar pure-img summary-img'></i>",
                     Summary = "A simple way of saving and sharing the extent of your ArcGIS JS map app."
                 },
@@ -30,7 +40,7 @@ namespace Blog.Web.Model
                     PostId = "ArcGISServerXamarinFormsMaps",
                     FriendlyPathName = "arcgis-server-xamarin-forms-maps",
                     Tags = new List<String>{ "Development", "OSS", "Xamarin", "ArcGIS" },
-                    DatePublished = new DateTime(2014, 6, 27, 0, 0, 0, 0, DateTimeKind.Utc),
+                    DatePublished = new DateTime(2014, 6, 30, 0, 0, 0, 0, DateTimeKind.Utc),
                     SummaryImageMarkup = @"<img width='120' height='90' alt='Xamarin' class='post-avatar pure-img summary-img' src='https://avatars3.githubusercontent.com/u/790012?s=120' srcset='https://avatars3.githubusercontent.com/u/790012?s=120 1x, https://avatars3.githubusercontent.com/u/790012?s=240 2x' />",
                     Summary = "Xamarin recently released Xamarin Forms for cross platform UI development and maps were an additional component of that. This post shows how you can add data from ArcGIS Server to your Xamarin Maps using the ArcGIS.PCL.XamarinMaps NuGet package."
                 },
