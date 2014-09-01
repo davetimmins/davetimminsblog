@@ -1,4 +1,6 @@
-﻿With the conference still fresh in the mind I thought I'd just put a note out about my presentations.
+﻿With this years conference at the Skycity Convention Centre still fresh in the mind I thought I'd just put a note out about my presentations.
+
+### Monday
 
 ### [DEVELOPERS, DEVELOPERS, DEVELOPERS](http://davetimmins.github.io/nzeuc2014/workshop/#/)
 
@@ -12,6 +14,8 @@ On the Monday afternoon I facilitated the Mobility SIG which was a forum for lik
 
 I'd like to tell you all about the sessions on Tuesday but I actually ended up working on installing Portal for ArcGIS and setting up Collector so that's that! I did make it to the dinner though in a star trek outfit along with about 100 other people it seemed.
 
+### Wednesday
+
 ### [Web Application Builder for ArcGIS](http://davetimmins.github.io/nzeuc2014/wab/)
 
 I had 3 sessions back-to-back on Wednesday afternoon (almost long enough to recover from the previous night) and they started with the Web Application Builder for ArcGIS. This was a joint session with [@jiriteach](https://twitter.com/jiriteach) and we explained what it is and how it can be used before going on to how you can get more out of it through customization. Either by changing what is provided OOTB or by writing your own widgets and themes.
@@ -23,6 +27,8 @@ Next up was extending ArcGIS Online which was a tag team effort by [@djmapper](h
 ### [What's New for Developers](http://davetimmins.github.io/nzeuc2014/whatsnew/)
 
 Last up was what's new for developers. I was joined by Scott again for this and here we ran down a top 10 of recent improvements in the development space across the ArcGIS platform as well as a quick overview of [developers.arcgis.com](https://developers.arcgis.com)
+
+### Wrapping up
 
 If you are interested in checking any of them out just click the links and you can see the presentations. They were all done using [reveal.js](http://lab.hakim.se/reveal-js/) which was a first for me and I'd like to thank [@patrickarlt](https://twitter.com/patrickarlt) and [@mjuniper](https://twitter.com/mjuniper) for the inspiration and theme which I borrowed / stole. I found it to be far nicer than using PowerPoint as there was no switching between windows / processes since I was already using a web browser and so I could just open links in a new tab.
 
