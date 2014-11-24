@@ -42,10 +42,10 @@ Here's the entire code for the functionality and a [live demo](http://joosh.azur
 
                     this.map.on('extent-change', function (e) {
                         window.location.hash =
-                            "xmin:" + this.map.extent.xmin +
-                            ",ymin:" + this.map.extent.ymin +
-                            ",xmax:" + this.map.extent.xmax +
-                            ",ymax:" + this.map.extent.ymax;
+                            "xmin:" + e.extent.xmin +
+                            ",ymin:" + e.extent.ymin +
+                            ",xmax:" + e.extent.xmax +
+                            ",ymax:" + e.extent.ymax;
                     });
                 }
             }

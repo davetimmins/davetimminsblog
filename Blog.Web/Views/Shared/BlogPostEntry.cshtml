@@ -21,13 +21,14 @@
     <text><a href="/blogposts/@tag.ToLower()"><span class="label label-default">@tag</span></a></text>
 }
 <article>
+
 @Html.Partial(Model.FriendlyPathName)
 </article>
 @Html.Partial("PostNavigation")
 @Html.Partial("Social")
 @Html.Partial("Comments")
 @section scripts {
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
 <script type="text/javascript">
     var disqus_shortname = 'davetimminsblog';
     (function () {
