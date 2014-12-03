@@ -164,12 +164,15 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 */
 
 .hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  color: #333;
-  background: #f8f8f8;
-  -webkit-text-size-adjust: none;
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    color: #333;
+    background: #f8f8f8;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    text-size-adjust: none;
 }
 
 .hljs-comment,
@@ -280,6 +283,24 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 .hljs-chunk {
   color: #aaa;
+}
+
+/* Custom styles to match updated github css */
+.cs .hljs-title {
+  color: #795da3;
+  font-weight: normal;
+}
+.cs .hljs-keyword {
+  color: #a71d5d;
+  font-weight: normal;
+}
+
+.cs .hljs-string {
+  color: #df5000;
+}
+
+.cs .hljs-number {
+  color: #0086b3;
 }
 
 .button {
