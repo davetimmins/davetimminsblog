@@ -9,12 +9,12 @@ namespace Blog.Web.Interface
 {
     public class BlogService : Service
     {
-        List<BlogPost> _data = new BlogPostData().SeedData();
+        List<BlogPost> _data = BlogPostData.SeedData();
 
         [DefaultView("BlogPostEntry")]
         public object Get(BlogPostEntry request)
         {
-            String cacheKey = UrnId.CreateWithParts<BlogPost>(request.Year.ToString(), request.Month, request.FriendlyPathName);
+            string cacheKey = UrnId.CreateWithParts<BlogPost>(request.Year.ToString(), request.Month, request.FriendlyPathName);
             return base.Request.ToOptimizedResultUsingCache(this.Cache, cacheKey, TimeSpan.FromMinutes(5), () =>
             {
                 BlogPost blogpost = null;
@@ -23,12 +23,12 @@ namespace Blog.Web.Interface
                 for (int i = 0; i < posts.Count; i++)
                 {
                     var itemToCheck = posts[i];
-                    if (String.Equals(itemToCheck.FriendlyPathName, request.FriendlyPathName, StringComparison.OrdinalIgnoreCase))
+                    if (string.Equals(itemToCheck.FriendlyPathName, request.FriendlyPathName, StringComparison.OrdinalIgnoreCase))
                     {
                         blogpost = posts[i];
                         return new BlogPostEntryModel(blogpost, (i < (posts.Count - 1))
                             ? posts[i + 1].RelativePostUrl
-                            : String.Empty, (i > 0) ? posts[i - 1].RelativePostUrl : String.Empty);
+                            : string.Empty, (i > 0) ? posts[i - 1].RelativePostUrl : string.Empty);
                     }
                 }
                 if (blogpost == null) throw HttpError.NotFound("Blogpost not found.");
@@ -41,7 +41,7 @@ namespace Blog.Web.Interface
         {
             if (request.Tags != null && request.Tags.Any())
             {
-                return base.Request.ToOptimizedResultUsingCache(this.Cache, UrnId.Create<BlogPostsModel>(String.Join("-", request.Tags)), TimeSpan.FromMinutes(5), () =>
+                return base.Request.ToOptimizedResultUsingCache(this.Cache, UrnId.Create<BlogPostsModel>(string.Join("-", request.Tags)), TimeSpan.FromMinutes(5), () =>
                 {
                     return new BlogPostsModel
                     {
@@ -79,24 +79,24 @@ namespace Blog.Web.Interface
         }
     }
 
-    [Route("/blogposts")]
-    [Route("/blogposts/{Tags}")]
+    [Route("/blogposts", Verbs = "GET")]
+    [Route("/blogposts/{Tags}", Verbs = "GET")]
     public class BlogPosts : IReturn<BlogPostsModel>
     {
         public int? Id { get; set; }
-        public String PostId { get; set; }
-        public String[] Tags { get; set; }
+        public string PostId { get; set; }
+        public string[] Tags { get; set; }
     }
 
-    [Route("/post/{Year}/{Month}/{FriendlyPathName}")]
+    [Route("/post/{Year}/{Month}/{FriendlyPathName}", Verbs = "GET")]
     public class BlogPostEntry : IReturn<BlogPostEntryModel>
     {
         public int Year { get; set; }
-        public String Month { get; set; }
-        public String FriendlyPathName { get; set; }
+        public string Month { get; set; }
+        public string FriendlyPathName { get; set; }
     }
 
-    [Route("/feed")]
+    [Route("/feed", Verbs = "GET")]
     public class BlogPostFeed : IReturn<SyndicationFeed>
     { }
 }

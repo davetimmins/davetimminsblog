@@ -76,6 +76,8 @@ namespace Blog.Web.Model
         public String FriendlyDate { get; set; }
 
         public String FriendlyPathName { get; set; }
+
+        public ServiceStack.ResponseStatus ResponseStatus { get; set; }
     }
 
     public class BlogPostsModel

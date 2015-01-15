@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace Blog.Web.Model
 {
-    public class BlogPostData
+    public static class BlogPostData
     {
         const String Author = "Dave Timmins";
-        List<BlogPost> _data;
+        static List<BlogPost> _data;
 
-        public List<BlogPost> SeedData()
+        public static List<BlogPost> SeedData()
         {
             return _data ?? (_data = new List<BlogPost>
             {

@@ -41,22 +41,38 @@ namespace Blog.Web
 
         public override void Configure(Container container)
         {
+            SetConfig(new HostConfig
+            {
+                GlobalResponseHeaders = new Dictionary<string, string>(),
+                WebHostUrl = "http://davetimmins.com", //for sitemap.xml urls
+            });
+
             Plugins.RemoveAll(x => x is RequestInfoFeature);
             Plugins.RemoveAll(x => x is MetadataFeature);
             Plugins.RemoveAll(x => x is PredefinedRoutesFeature);
             Plugins.RemoveAll(x => x is NativeTypesFeature);
 
             Plugins.Add(new RazorFormat());
+            Plugins.Add(new SitemapFeature
+            {
+                UrlSet = Blog.Web.Model.BlogPostData.SeedData()
+                    .ConvertAll(x => new SitemapUrl
+                    {
+                        Location = new Blog.Web.Interface.BlogPostEntry
+                        {
+                            FriendlyPathName = x.FriendlyPathName,
+                            Month = string.Format("{0:MMMM}", x.DatePublished).ToLower(),
+                            Year = x.DatePublished.Year
+                        }.ToAbsoluteUri(),
+                        LastModified = x.DatePublished,
+                        ChangeFrequency = SitemapFrequency.Weekly,
+                    })
+            });
             RssFormat.Register(this);
 
             CustomErrorHttpHandlers.Clear();
             CustomErrorHttpHandlers.Add(HttpStatusCode.NotFound, new RazorHandler("/404"));
             CustomErrorHttpHandlers.Add(HttpStatusCode.InternalServerError, new RazorHandler("/oops"));
-
-            SetConfig(new HostConfig
-            {
-                GlobalResponseHeaders = new Dictionary<String, String>()
-            });
         }
     }
 
@@ -69,7 +85,7 @@ namespace Blog.Web
             appHost.ContentTypes.Register(AtomContentType, SerializeToStream, DeserializeFromStream);
         }
 
-        static void SerializeToStream(ServiceStack.Web.IRequest requestContext, object dto, ServiceStack.Web.IResponse httpRes)        
+        static void SerializeToStream(ServiceStack.Web.IRequest requestContext, object dto, ServiceStack.Web.IResponse httpRes)
         {
             var syndicationFeed = dto as SyndicationFeed;
             if (syndicationFeed == null) return;
