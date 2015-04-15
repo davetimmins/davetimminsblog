@@ -52,7 +52,7 @@ namespace Blog.Web
             Plugins.RemoveAll(x => x is PredefinedRoutesFeature);
             Plugins.RemoveAll(x => x is NativeTypesFeature);
 
-            Plugins.Add(new RazorFormat());
+            Plugins.Add(new RazorFormat { MinifyHtml = true });
             Plugins.Add(new SitemapFeature
             {
                 UrlSet = Blog.Web.Model.BlogPostData.SeedData()

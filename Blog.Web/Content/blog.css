@@ -1,14 +1,15 @@
 ﻿body {
-    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 14px;
+    font-family: "Raleway","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 0.9em;
     line-height: 1.42857143;
     color: #666666;
-    background-color: #ffffff;
+    background-color: #fdfdfd;
     vertical-align: baseline;
 }
 
 h5 {
     margin: 0.8em 0;
+    color: #333333;
 }
 
 article {
@@ -16,12 +17,12 @@ article {
 }
 
 a {
-    color: #3399f3;
+    color: #03a9f4;
     text-decoration: none;
 }
 
     a:hover, a:focus {
-        color: #3399f3;
+        color: #40c4ff;
         text-decoration: underline;
     }
 
@@ -96,7 +97,6 @@ a {
 
 .post {
     padding-bottom: 2em;
-    max-width: 700px;
     margin: 0 auto;
 }
 
@@ -121,7 +121,6 @@ a {
 .label {
     display: inline;
     padding: .2em .6em .3em;
-    font-size: 75%;
     font-weight: bold;
     line-height: 1;
     color: #ffffff;
@@ -365,7 +364,7 @@ pre code, .block-code {
     font-size: .94em;
     overflow: auto;
     padding: 10px 15px!important;
-    border-left: 5px solid #558cbf;
+    border-left: 4px solid #3f51b5;
     font-family: Consolas,Menlo,Monaco,"Courier New",monospace !important;
     text-align: left;
     -ms-word-wrap: normal;
