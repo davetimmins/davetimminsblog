@@ -14,11 +14,11 @@
     <meta name="twitter:creator" content="davetimmins" />
 }
 <h1>@Model.Title</h1>
-<h4><i class="fa fa-calendar-o fa-2x"></i> @Model.FriendlyDate</h4>
-<i class="fa fa-tags fa-2x"></i>
+<h4><i class="fa fa-calendar-o fa-2x i-vb"></i> @Model.FriendlyDate</h4>
+<i class="fa fa-tags fa-2x i-vtt"></i>
 @foreach (String tag in Model.Tags)
 {
-    <text><a href="/blogposts/@tag.ToLower()"><span class="label label-default">@tag</span></a></text>
+    <text><a href="/blogposts/@tag.ToLower()" class="v-m"><span class="label label-default">@tag</span></a></text>
 }
 <article>
 @Html.Partial(Model.FriendlyPathName)

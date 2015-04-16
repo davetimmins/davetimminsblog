@@ -12,6 +12,19 @@ h5 {
     color: #333333;
 }
 
+.i-vb {
+    vertical-align: bottom;
+}
+
+.i-vtt {
+    vertical-align: text-top;
+}
+
+.v-m {
+    vertical-align: middle;
+}
+
+
 article {
     display: block;
 }
@@ -67,8 +80,8 @@ a {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: white;
-    border-bottom: 1px #f1f4f6 solid;
+    background-color: #03a9f4;
+    border-bottom: 4px #40c4ff solid;
 }
 
 .pure-menu h1 {
@@ -76,17 +89,21 @@ a {
     font-size: 1.2em;
     margin: 0;
     vertical-align: middle;
-    margin: 0;
 }
 
 .pure-menu .pure-menu-heading {
     text-transform: none;
+    color: #f1f4f6
 }
 
 .home-links {
     text-transform: none;
     text-align: right;
 }
+
+ .home-menu-link {
+     color: #f1f4f6
+ }
 
 .content {
     margin: 0 auto;
@@ -369,7 +386,7 @@ pre code, .block-code {
     font-size: .94em;
     overflow: auto;
     padding: 10px 15px!important;
-    border-left: 4px solid #3f51b5;
+    border-left: 4px solid #03a9f4;
     font-family: Consolas,Menlo,Monaco,"Courier New",monospace !important;
     text-align: left;
     -ms-word-wrap: normal;
