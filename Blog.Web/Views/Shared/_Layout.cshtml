@@ -1,7 +1,7 @@
 ﻿<!doctype html>
 <html>
 <head>
-    <link href='//fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css' />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -10,10 +10,10 @@
     <meta name="author" content="Dave Timmins" />
     @RenderSection("twitterCardTags", false)
     <title>@ViewBag.Title</title>
-    <link rel="stylesheet" href="//yui.yahooapis.com/pure/0.5.0/pure-min.css">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="@Url.Content("~/Content/blog.min.css")" rel="stylesheet" />
-    <link rel="alternate" type="application/rss+xml" title="davetimmins blog" href="//davetimmins.com/feed" />
+    <link rel="alternate" type="application/rss+xml" title="davetimmins blog" href="http://davetimmins.com/feed" />
     <script type="text/javascript">
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
@@ -27,26 +27,38 @@
     </script>
 </head>
 <body>
-    <div class="header" role="banner">
-        <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
-            <h1><a class="pure-menu-heading" href="@Url.Content("~/")">davetimmins blog</a></h1>
-            <ul>
-                <li><a href="https://github.com/davetimmins" title="davetimmins on GitHub"><i class="fa fa-github fa-2x summary-img"></i></a></li>
-                <li><a href="https://twitter.com/davetimmins" title="davetimmins on Twitter"><i class="fa fa-twitter fa-2x summary-img"></i></a></li>
-                <li><a href="@Url.Content("~/feed")" title="davetimmins blog feed"><i class="fa fa-rss fa-2x summary-img"></i></a></li>
-            </ul>
+    <div class="pure-menu-horizontal pure-menu-fixed pure-g" role="banner">
+        <div class="pure-u-1-2">
+            <div class="pure-menu">
+                <h1><a class="pure-menu-heading" href="@Url.Content("~/")">davetimmins blog</a></h1>
+            </div>
+        </div>
+        <div class="pure-u-1-2">
+            <div class="pure-menu home-links">
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item"><a class="pure-menu-link" href="https://github.com/davetimmins" title="davetimmins on GitHub"><i class="fa fa-github fa-2x summary-img"></i></a></li>
+                    <li class="pure-menu-item"><a class="pure-menu-link" href="https://twitter.com/davetimmins" title="davetimmins on Twitter"><i class="fa fa-twitter fa-2x summary-img"></i></a></li>
+                    <li class="pure-menu-item"><a class="pure-menu-link" href="@Url.Content("~/feed")" title="davetimmins blog feed"><i class="fa fa-rss fa-2x summary-img"></i></a></li>
+                </ul>
+            </div>
         </div>
     </div>
     <div class="content">
         @ServiceStack.MiniProfiler.Profiler.RenderIncludes().AsRaw()
         @RenderBody()
     </div>
-    <div class="footer" role="contentinfo">
-        <div class="home-menu pure-menu pure-menu-horizontal pure-menu-open">
-            <span>&nbsp; &copy; @DateTime.Now.Year dave timmins</span>
-            <ul>
-                <li><a href="#">Back to top <i class="fa fa-chevron-up"></i></a></li>
-            </ul>
+    <div class="pure-menu-horizontal pure-g" role="contentinfo">
+        <div class="pure-u-1-2">
+            <div class="pure-menu">
+                <span>&nbsp; &copy; @DateTime.Now.Year dave timmins</span>
+            </div>
+        </div>
+        <div class="pure-u-1-2">
+            <div class="pure-menu home-links">
+                <ul class="pure-menu-list home-links">
+                    <li class="pure-menu-item"><a class="pure-menu-link" href="#">Back to top <i class="fa fa-chevron-up"></i></a></li>
+                </ul>
+            </div>
         </div>
     </div>
     @RenderSection("scripts", false)

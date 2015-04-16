@@ -1,4 +1,4 @@
-﻿body {
+﻿body, pure-g {
     font-family: "Raleway","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 0.9em;
     line-height: 1.42857143;
@@ -63,24 +63,29 @@ a {
     color: #ef6450;
 }
 
-.home-menu h1 {
+.pure-menu-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    border-bottom: 1px #f1f4f6 solid;
+}
+
+.pure-menu h1 {
     float: left;
     font-size: 1.2em;
     margin: 0;
     vertical-align: middle;
+    margin: 0;
 }
 
 .pure-menu .pure-menu-heading {
     text-transform: none;
 }
 
-.home-menu span {
-    float: left;
-    vertical-align: middle;
-}
-
-.home-menu ul {
-    float: right;
+.home-links {
+    text-transform: none;
+    text-align: right;
 }
 
 .content {
