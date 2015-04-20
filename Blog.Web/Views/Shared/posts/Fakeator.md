@@ -49,7 +49,7 @@ Using this dijit also has the advantage of providing type ahead searching by def
 
 ####ArcGIS Online Integration
 
-You may have noticed that I am including `/GeocodeServer` in the url paths above. This is to make sure that I can use the implementation with ArcGIS Online. If you log in to your organization account and go to the settings you have the option to add geocoders under the utility services section. In order for yor service to be added it must be identified by ArcGIS Online as a valid Esri Locator service so I achieve this by providing the expected response when the service is interrogated via the `/GeocodeServer` endpoint. 
+You may have noticed that I am including `/GeocodeServer` in the url paths above. This is to make sure that I can use the implementation with ArcGIS Online. If you log in to your organization account and go to the settings you have the option to add geocoders under the utility services section. In order for your service to be added it must be identified by ArcGIS Online as a valid Esri Locator service so I achieve this by providing the expected response when the service is interrogated via the `/GeocodeServer` endpoint. 
 
 <img src="/Assets/configure fakeator.png" alt="configure fakeator" class="pure-img"/>
 

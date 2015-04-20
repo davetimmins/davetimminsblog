@@ -1,4 +1,4 @@
-﻿A common request for web map applications is to have some sort of bookmark function. Bookmarks are just a quick way of jumping to a saved extent or view for your map and they are usually presented as a list of meaningful names. This is fine when you are using an application but what if you just want a way of sharing an extent with someone or creating a permalink of your extent / view. Here's a very quick and easy way to do it for the [Esri JS API](https://developers.arcgis.com/javascript/) using the `window.location.hash`.
+﻿A common request for web map applications is to have some sort of bookmark function. Bookmarks are just a quick way of jumping to a saved extent or view for your map and they are usually presented as a list of meaningful names. This is fine when you are using an application but what if you just want a way of sharing an extent with someone or creating a permalink of your extent / view. Here's a simple way to do it for the [Esri JS API](https://developers.arcgis.com/javascript/) using the `window.location.hash`.
 
 We only need to do 2 things for this. First, since we want to know the extent we need to hook into the map `extent-change` event and update the `location.hash`. Second, when we start the app we need to check the `location.hash` and if an extent is there then set the map extent accordingly. That's it!
 
@@ -53,7 +53,7 @@ Here's the entire code for the functionality and a [live demo](http://joosh.azur
     });
 </code></pre>
 
-Now to enable this you just need
+Now to enable this you need
 
 <pre><code class='js'>this.map = new Map('map', config.options);
 

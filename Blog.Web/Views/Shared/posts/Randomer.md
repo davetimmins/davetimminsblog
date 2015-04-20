@@ -12,7 +12,7 @@ To start I went to [developers.arcgis.com](https://developers.arcgis.com) and lo
 
 <img src="/Assets/create hosted feature service.png" alt="create hosted feature service access" class="pure-img"/>
 
-Of course I am running Fiddler whilst doing this so I can see the queries being used behind the scenes (Note the url, type of request and the parameters used in the request and response). From this information I can now recreate the correct request to query my feature services and start working with them. What this showed me was how to get the feature services for my account and then how to interrogate those services for their service details. 
+I am running Fiddler whilst doing this so I can see the queries being used behind the scenes (Note the url, type of request and the parameters used in the request and response). From this information I can now recreate the correct request to query my feature services and start working with them. What this showed me was how to get the feature services for my account and then how to interrogate those services for their service details. 
 
 <img src="/Assets/arcgis online fiddler.png" alt="arcgis online fiddler" class="pure-img"/>
 
