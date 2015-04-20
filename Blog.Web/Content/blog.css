@@ -14,16 +14,21 @@ h5 {
 
 .i-vb {
     vertical-align: bottom;
+    margin-right: 6px;
 }
 
 .i-vtt {
     vertical-align: text-top;
+    margin-right: 6px;
 }
 
 .v-m {
     vertical-align: middle;
 }
 
+.custom-font {
+    font-family: "Raleway","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
 
 article {
     display: block;
