@@ -122,6 +122,10 @@ a {
     word-wrap: break-word;
 }
 
+.elevator-button {
+    cursor: pointer;
+}
+
 .post {
     padding-bottom: 2em;
     margin: 0 auto;

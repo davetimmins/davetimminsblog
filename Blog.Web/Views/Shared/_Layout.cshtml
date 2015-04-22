@@ -50,19 +50,27 @@
     <div class="pure-menu-horizontal pure-g" role="contentinfo">
         <div class="pure-u-1-2">
             <div class="pure-menu">
-                <span class=" custom-font">&nbsp; &copy; @DateTime.Now.Year dave timmins</span>
+                <p class="custom-font">&nbsp; &copy; @DateTime.Now.Year dave timmins</p>
             </div>
         </div>
         <div class="pure-u-1-2">
             <div class="pure-menu home-links">
                 <ul class="pure-menu-list home-links">
-                    <li class="pure-menu-item"><a class="pure-menu-link custom-font" href="#">Back to top <i class="fa fa-chevron-up"></i></a></li>
+                    <li class="pure-menu-item"><p class="pure-menu-link custom-font elevator-button">Back to top <i class="fa fa-chevron-up"></i></p></li>
                 </ul>
             </div>
         </div>
     </div>
     @RenderSection("scripts", false)
+    <script>
+        var Elevator = function () { "use strict"; function n(n, e) { for (var t in e) t in n || (n[t] = e[t]); return n } function e(n, e, t, u) { return n /= u / 2, 1 > n ? t / 2 * n * n + e : (n--, -t / 2 * (n * (n - 2) - 1) + e) } function t(n) { s || (s = n); var u = n - s, r = e(u, A, -A, c); window.scrollTo(0, r), c > u ? requestAnimationFrame(t) : o() } function u() { f || (f = !0, A = document.documentElement.scrollTop || d.scrollTop, m || (c = 1.5 * A), requestAnimationFrame(t), l && l.play()) } function o() { s = null, A = null, f = !1, l && (l.pause(), l.currentTime = 0), a && a.play() } function r(n) { n.addEventListener("click", u, !1) } function i(n) { d = document.body, n.element && r(n.element), n.duration && (m = !0, c = n.duration), n.mainAudio && (l = new Audio(n.mainAudio), l.setAttribute("preload", "true"), l.setAttribute("loop", "true")), n.endAudio && (a = new Audio(n.endAudio), a.setAttribute("preload", "true")) } var l, a, d = null, c = null, m = !1, s = null, A = null, f = !1; return n(i, { elevate: u }) }();
+
+        window.onload = function () {
+            var elevator = new Elevator({
+                element: document.querySelector('.elevator-button'),
+                duration: 1000 // milliseconds
+            });
+        }
+    </script>
 </body>
 </html>
-
-
