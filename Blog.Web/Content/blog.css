@@ -12,8 +12,12 @@ h5 {
     color: #333333;
 }
 
-.i-vb {
-    vertical-align: bottom;
+h4 {
+    color: #b6b6b6;
+}
+
+.i-vm {
+    vertical-align: middle;
     margin-right: 6px;
 }
 
@@ -177,7 +181,7 @@ a {
 }
 
 .label-default {
-    background-color: #474949;
+    background-color: #b6b6b6;
 }
 
     .label-default[href]:hover, .label-default[href]:focus {
